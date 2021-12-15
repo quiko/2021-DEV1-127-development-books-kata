@@ -25,12 +25,12 @@ it("Total length of list should be 5", () => {
   expect(listUl.children.length).toBe(5);
 });
 
-it("should render a button with every item", () => {
+it("should render an add to cart button with every item", () => {
   const { getAllByText } = render(<BooksList />);
   expect(getAllByText("Add to cart")).toHaveLength(5);
 });
 
-test("calls function on click", () => {
+test("buttons calls function on click", () => {
   const onClick = jest.fn();
 
   const buttons = screen.queryAllByTestId("button");
@@ -42,7 +42,6 @@ test("calls function on click", () => {
 });
 
 it("should render a  checkout button", () => {
-    const { getByText } = render(<BooksList />);
-    expect(getByText("Checkout")).toBeTruthy();
-  });
-
+  const { getByText } = render(<BooksList />);
+  expect(getByText("Checkout")).toBeTruthy();
+});
