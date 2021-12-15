@@ -17,11 +17,11 @@ export default function BooksList() {
   }
 
   return (
-    <div>
-      <div data-testid="item-list-wrap">
+    <div className="container">
+      <div data-testid="item-list-wrap" >
         {Books.map((book, index) => (
-          <div key={index}>
-            <div className="card" data-testid="single-item">
+          <div key={index} className="col-md-4">
+            <div className="card " data-testid="single-item">
               <img
                 src={book.image}
                 className="card-img-top"
@@ -29,7 +29,13 @@ export default function BooksList() {
               ></img>
               <div className="card-body">{book.name}</div>
             </div>
-            <button data-testid="button" onClick={() => addToCart(book)}>
+
+            <button
+              type="button"
+              className="btn btn-primary"
+              data-testid="button"
+              onClick={() => addToCart(book)}
+            >
               Add to cart
             </button>
           </div>
